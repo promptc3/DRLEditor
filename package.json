@@ -1,0 +1,29 @@
+{
+  "name": "drl-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "webpack --progress",
+    "generate-imports": "node generate-imports.js",
+    "serve": "webpack --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.9.1",
+    "file-loader": "^6.2.0",
+    "glob": "^10.3.10",
+    "style-loader": "^3.3.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.90.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.45.0"
+  }
+}
