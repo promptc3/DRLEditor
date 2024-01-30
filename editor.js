@@ -114,9 +114,9 @@ export function createAfterDispose(value) {
 }
 
 export function getValue() {
-    const drlModel = monaco.editor.getModels().pop();
-    if (drlModel) {
-        return drlModel.getValue();
+    const model = monaco.editor.getModels().at(-1);
+    if (model) {
+        return model.getValue();
     }
     return undefined;
 }
