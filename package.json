@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --progress",
     "generate-imports": "node generate-imports.js",
-    "serve": "webpack serve"
+    "start": "webpack serve",
+    "release": "./build_and_run.ps1"
   },
   "keywords": [],
   "author": "",
