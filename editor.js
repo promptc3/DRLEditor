@@ -100,10 +100,23 @@ export function createAction(action, keys) {
     try {
         monaco.editor.addEditorAction(actionDescriptor);
     } catch (error) {
-       console.error(`Unable to add action: ${actionDescriptor} with keybinding: ${keyChord}.`, error) ;
+       console.error(`Unable to add action: ${actionDescriptor} with keybinding`, error) ;
     }
 }
 
+export function createAfterDispose(value) {
+    try {
+        monaco.editor.getModels().forEach(model => model.dispose());
+    } catch (error) {
+       console.error("Unable to dispose previous models.", error);
+    }
+    createEditor(value);
+}
+
 export function getValue() {
-    return monaco.editor.getModels()[0].getValue();
+    const drlModel = monaco.editor.getModels().pop();
+    if (drlModel) {
+        return drlModel.getValue();
+    }
+    return undefined;
 }

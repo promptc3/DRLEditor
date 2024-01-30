@@ -2,7 +2,7 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: {
 		app: './editor.js',
 		'editor.worker': 'monaco-editor/esm/vs/editor/editor.worker.js'
@@ -36,7 +36,7 @@ module.exports = {
 		port: 9000
 	},
 	optimization: {
-		minimize: false,
+		minimize: true,
 		minimizer: [new TerserPlugin()]
 	}
 };
